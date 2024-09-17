@@ -1,10 +1,10 @@
 
-import Input from './components/Input/Input.jsx'
+import Counter from './components/Counter/Counter.jsx';
+
 const App = () => {
   return (
     <div>
-      <h1>React Input Example</h1>
-      <Input />
+      <Counter />
     </div>
   );
 };
