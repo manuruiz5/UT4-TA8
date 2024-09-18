@@ -44,7 +44,7 @@ const TaskList = () => {
         {tasks.map((task, index) => (
           <li key={index}>
             {task}
-            <button onClick={() => removeTask(index)} style={{ marginLeft: '10px' }}>
+            <button onClick={() => removeTask(index)}>
               Eliminar tarea
             </button>
             </li>
