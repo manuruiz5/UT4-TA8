@@ -1,9 +1,9 @@
-import ToggleText from './components/ToggleText/ToggleText';
+import TaskList from './components/TaskList/TaskList';
 
 const App = () => {
   return (
     <div>
-      <ToggleText />
+      <TaskList />
     </div>
   );
 };
