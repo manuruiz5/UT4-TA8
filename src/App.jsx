@@ -1,10 +1,9 @@
-
-import Counter from './components/Counter/Counter.jsx';
+import ToggleText from './components/ToggleText/ToggleText';
 
 const App = () => {
   return (
     <div>
-      <Counter />
+      <ToggleText />
     </div>
   );
 };
