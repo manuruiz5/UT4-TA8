@@ -9,7 +9,7 @@ const TaskList = () => {
   const [task, setTask] = useState('');
 
   // Función para enviar la tarea que se ingresa en el input 
-  const inputSubmit = (e) => {
+  const addTask = (e) => {
     e.preventDefault(); // Evita que la página se recargue
     if (task.trim() !== '') { //Agrega la tarea si no esta vacía
       setTasks([...tasks, task]); // Añade la nueva tarea a la lista
@@ -22,10 +22,16 @@ const TaskList = () => {
     setTask(e.target.value); // Actualiza el estado task con el valor del input
   }
 
+  // Función para eliminar una tarea
+  const removeTask = (index) => {
+    const updatedTasks = tasks.filter((_, i) => i !== index); // Filtra las tareas, removiendo la tarea seleccionada
+    setTasks(updatedTasks); // Actualiza la lista de tareas
+  };
+
   return (
     <div className={styles.container}>
       <h2>Lista de Tareas</h2>
-      <form onSubmit={inputSubmit}>
+      <form onSubmit={addTask}>
         <input
           type="text"
           value={task}
@@ -36,7 +42,12 @@ const TaskList = () => {
       </form>
       <ul>
         {tasks.map((task, index) => (
-          <li key={index}>{task}</li>
+          <li key={index}>
+            {task}
+            <button onClick={() => removeTask(index)} style={{ marginLeft: '10px' }}>
+              Eliminar tarea
+            </button>
+            </li>
         ))}
       </ul>
     </div>
